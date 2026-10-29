@@ -1,0 +1,28 @@
+$ MKCOL /alice/contacts/ as an addressbook
+201
+
+$ PUT /alice/contacts/pat-j.vcf
+201
+
+$ GET /alice/contacts/pat-j.vcf
+BEGIN:VCARD
+VERSION:4.0
+UID:pat-j-picture-framing@lab.example
+EMAIL:pat@framing-workshop.example
+FN:Pat J
+NOTE:Frames the club exhibition prints.
+ORG:Picture Framing Workshop
+TEL;TYPE=work:+1-555-013-4471
+END:VCARD
+$ REPORT addressbook-query asking for FN and EMAIL
+<?xml version='1.0' encoding='utf-8'?>
+<multistatus xmlns="DAV:" xmlns:CR="urn:ietf:params:xml:ns:carddav"><response><href>/alice/contacts/pat-j.vcf</href><propstat><prop><getetag>"424e18c21d37a38de3a26124e902825ac1287e56cb978ae9fb0f9b79825f605a"</getetag><CR:address-data>BEGIN:VCARD
+VERSION:4.0
+UID:pat-j-picture-framing@lab.example
+EMAIL:pat@framing-workshop.example
+FN:Pat J
+NOTE:Frames the club exhibition prints.
+ORG:Picture Framing Workshop
+TEL;TYPE=work:+1-555-013-4471
+END:VCARD
+</CR:address-data></prop><status>HTTP/1.1 200 OK</status></propstat></response></multistatus>

@@ -1,0 +1,16 @@
+$ curl -s -i http://127.0.0.1:5232/   (no credentials)
+HTTP/1.0 302 Found
+Date: Thu, 29 Oct 2026 18:44:24 GMT
+Server: WSGIServer/0.2 CPython/3.12.3
+Location: /.web
+Content-Type: text/plain; charset=utf-8
+Content-Length: 19
+
+Redirected to /.web
+$ curl -s -u alice:lab-alice-123 http://127.0.0.1:5232/
+Redirected to /.web
+$ curl -s -o /dev/null -w '%{http_code}' -u alice:wrong-password http://127.0.0.1:5232/
+401
+
+$ curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:5232/.web/
+200

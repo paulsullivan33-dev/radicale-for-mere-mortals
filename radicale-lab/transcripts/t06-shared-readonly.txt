@@ -1,0 +1,14 @@
+$ bob GET the shared event (share says read-only)
+200
+$ bob PROPFIND /alice/club/ Depth 1
+207
+$ bob PUT a new event into the shared calendar (should be refused)
+403
+$ bob DELETE the shared event (should be refused)
+403
+$ bob GET alice contacts (NOT shared, should be refused)
+403
+$ alice PUT a second event into her own calendar (owner rule still works)
+201
+$ bob GET that new event too (the share covers the whole collection)
+200

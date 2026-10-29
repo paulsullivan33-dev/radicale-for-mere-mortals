@@ -1,0 +1,76 @@
+$ PROPFIND /alice/ (Depth: 0) as alice
+<?xml version='1.0' encoding='utf-8'?>
+<multistatus xmlns="DAV:" xmlns:C="urn:ietf:params:xml:ns:caldav" xmlns:CR="urn:ietf:params:xml:ns:carddav" xmlns:RADICALE="http://radicale.org/ns/"><response><href>/alice/</href><propstat><prop><principal-collection-set><href>/</href></principal-collection-set><RADICALE:version>3.9.0</RADICALE:version><current-user-principal><href>/alice/</href></current-user-principal><current-user-privilege-set><privilege><read /></privilege><privilege><all /></privilege><privilege><write /></privilege><privilege><write-properties /></privilege><privilege><write-content /></privilege></current-user-privilege-set><supported-report-set><supported-report><report><expand-property /></report></supported-report><supported-report><report><principal-search-property-set /></report></supported-report><supported-report><report><principal-property-search /></report></supported-report></supported-report-set><resourcetype><principal /><collection /></resourcetype><owner><href>/alice/</href></owner><C:calendar-user-address-set><href>/alice/</href></C:calendar-user-address-set><principal-URL><href>/alice/</href></principal-URL><CR:addressbook-home-set><href>/alice/</href></CR:addressbook-home-set><C:calendar-home-set><href>/alice/</href></C:calendar-home-set></prop><status>HTTP/1.1 200 OK</status></propstat></response></multistatus>
+
+$ MKCALENDAR /alice/club/ with displayname "Riverside Camera Club"
+201
+
+$ PROPFIND /alice/ (Depth: 1) as alice
+<?xml version="1.0" ?>
+<multistatus xmlns="DAV:" xmlns:C="urn:ietf:params:xml:ns:caldav" xmlns:CR="urn:ietf:params:xml:ns:carddav" xmlns:CS="http://calendarserver.org/ns/" xmlns:RADICALE="http://radicale.org/ns/">
+	<response>
+		<href>/alice/</href>
+		<propstat>
+			<prop>
+				<principal-collection-set>
+					<href>/</href>
+				</principal-collection-set>
+				<RADICALE:version>3.9.0</RADICALE:version>
+				<current-user-principal>
+					<href>/alice/</href>
+				</current-user-principal>
+				<current-user-privilege-set>
+					<privilege>
+						<read/>
+					</privilege>
+					<privilege>
+						<all/>
+					</privilege>
+					<privilege>
+						<write/>
+					</privilege>
+					<privilege>
+						<write-properties/>
+					</privilege>
+					<privilege>
+						<write-content/>
+					</privilege>
+				</current-user-privilege-set>
+				<supported-report-set>
+					<supported-report>
+						<report>
+							<expand-property/>
+						</report>
+					</supported-report>
+					<supported-report>
+						<report>
+							<principal-search-property-set/>
+						</report>
+					</supported-report>
+					<supported-report>
+						<report>
+							<principal-property-search/>
+						</report>
+					</supported-report>
+				</supported-report-set>
+				<resourcetype>
+					<principal/>
+					<collection/>
+				</resourcetype>
+				<owner>
+					<href>/alice/</href>
+				</owner>
+				<C:calendar-user-address-set>
+					<href>/alice/</href>
+				</C:calendar-user-address-set>
+				<principal-URL>
+					<href>/alice/</href>
+				</principal-URL>
+				<CR:addressbook-home-set>
+					<href>/alice/</href>
+				</CR:addressbook-home-set>
+				<C:
+$ find storage -type f (what landed on disk)
+storage/.Radicale.lock
+storage/collection-root/alice/club/.Radicale.cache/sync-token/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+storage/collection-root/alice/club/.Radicale.props

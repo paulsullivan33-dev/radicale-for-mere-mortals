@@ -1,0 +1,9 @@
+[owner-full-access]
+user: .*
+collection: {user}(/.*)?
+permissions: RWrw
+
+[club-calendar-read-for-bob]
+user: bob
+collection: alice/club(/.*)?
+permissions: Rr

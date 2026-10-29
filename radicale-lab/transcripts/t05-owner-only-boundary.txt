@@ -1,0 +1,12 @@
+$ bob GET /alice/club/photo-walk.ics  (rights type = owner_only)
+403
+$ bob PROPFIND /alice/ Depth 1
+403
+$ bob GET /alice/contacts/pat-j.vcf
+403
+$ bob PUT into /alice/club/ (a forged event)
+403
+$ bob GET his own principal /bob/ (works, it is his)
+207
+$ no credentials at all on the event
+401

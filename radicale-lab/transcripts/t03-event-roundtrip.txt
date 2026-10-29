@@ -1,0 +1,40 @@
+$ PUT /alice/club/photo-walk.ics (the event above)
+201
+
+$ GET /alice/club/photo-walk.ics
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Mere Mortals Lab//Radicale Guide//EN
+BEGIN:VEVENT
+UID:photo-walk-2026-11-07@lab.example
+DTSTART:20261107T150000Z
+DTEND:20261107T170000Z
+DESCRIPTION:Bring any camera. Theme is bridges.
+DTSTAMP:20261029T190000Z
+LOCATION:Riverside park bandstand
+SUMMARY:Riverside Camera Club photo walk
+END:VEVENT
+END:VCALENDAR
+$ REPORT calendar-query, time range Nov 2026
+<?xml version='1.0' encoding='utf-8'?>
+<multistatus xmlns="DAV:" xmlns:C="urn:ietf:params:xml:ns:caldav"><response><href>/alice/club/photo-walk.ics</href><propstat><prop><getetag>"45358f4a6fd7c067f4967d97606ec58a9f9f1587a6ab66dc97c26349de6f52e2"</getetag><C:calendar-data>BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Mere Mortals Lab//Radicale Guide//EN
+BEGIN:VEVENT
+UID:photo-walk-2026-11-07@lab.example
+DTSTART:20261107T150000Z
+DTEND:20261107T170000Z
+DESCRIPTION:Bring any camera. Theme is bridges.
+DTSTAMP:20261029T190000Z
+LOCATION:Riverside park bandstand
+SUMMARY:Riverside Camera Club photo walk
+END:VEVENT
+END:VCALENDAR
+</C:calendar-data></prop><status>HTTP/1.1 200 OK</status></propstat></response></multistatus>
+
+$ ls of the calendar folder on disk
+storage/collection-root/alice/club/.Radicale.cache/history/photo-walk.ics
+storage/collection-root/alice/club/.Radicale.cache/item/photo-walk.ics
+storage/collection-root/alice/club/.Radicale.cache/sync-token/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+storage/collection-root/alice/club/.Radicale.props
+storage/collection-root/alice/club/photo-walk.ics

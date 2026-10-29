@@ -1,0 +1,41 @@
+$ cat the event as stored on disk (plain text, the file IS the database row)
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Mere Mortals Lab//Radicale Guide//EN
+BEGIN:VEVENT
+UID:photo-walk-2026-11-07@lab.example
+DTSTART:20261107T150000Z
+DTEND:20261107T170000Z
+DESCRIPTION:Bring any camera. Theme is bridges.
+DTSTAMP:20261029T190000Z
+LOCATION:Riverside park bandstand
+SUMMARY:Riverside Camera Club photo walk
+END:VEVENT
+END:VCALENDAR
+$ du -sh storage; find storage/collection-root -type f -name "*.ics" -o -type f -name "*.vcf" | sort
+68K	storage
+storage/collection-root/alice/club/.Radicale.cache/history/darkroom-night.ics
+storage/collection-root/alice/club/.Radicale.cache/history/photo-walk.ics
+storage/collection-root/alice/club/.Radicale.cache/item/darkroom-night.ics
+storage/collection-root/alice/club/.Radicale.cache/item/photo-walk.ics
+storage/collection-root/alice/club/darkroom-night.ics
+storage/collection-root/alice/club/photo-walk.ics
+storage/collection-root/alice/contacts/.Radicale.cache/history/pat-j.vcf
+storage/collection-root/alice/contacts/.Radicale.cache/item/pat-j.vcf
+storage/collection-root/alice/contacts/pat-j.vcf
+
+$ stop the server, tar the storage folder = a complete backup
+tar czf backup-test.tar.gz storage  -> exit 0
+storage/
+storage/collection-root/
+storage/collection-root/alice/
+storage/collection-root/alice/club/
+storage/collection-root/alice/club/.Radicale.props
+storage/collection-root/alice/club/.Radicale.cache/
+storage/collection-root/alice/club/.Radicale.cache/sync-token/
+storage/collection-root/alice/club/.Radicale.cache/sync-token/e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855
+...
+2017 bytes
+$ restart from the backup copy and read the event back
+SUMMARY:Darkroom night
+SUMMARY:Riverside Camera Club photo walk

@@ -1,0 +1,9 @@
+BEGIN:VCARD
+VERSION:4.0
+UID:pat-j-picture-framing@lab.example
+FN:Pat J
+ORG:Picture Framing Workshop
+EMAIL:pat@framing-workshop.example
+TEL;TYPE=work:+1-555-013-4471
+NOTE:Frames the club exhibition prints.
+END:VCARD

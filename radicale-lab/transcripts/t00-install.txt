@@ -1,0 +1,13 @@
+$ python3 -m venv venv && pip install 'radicale[bcrypt]'
+radicale 3.9.0, python-dateutil, vobject, libpass, bcrypt (versions from pip freeze)
+bcrypt==5.0.0
+libpass==1.9.4
+python-dateutil==3.0.0
+Radicale==3.9.0
+vobject==0.9.9
+
+$ radicale --version
+3.9.0
+
+$ python3 --version
+Python 3.12.3

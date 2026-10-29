@@ -1,0 +1,13 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Mere Mortals Lab//Radicale Guide//EN
+BEGIN:VEVENT
+UID:photo-walk-2026-11-07@lab.example
+DTSTAMP:20261029T190000Z
+DTSTART:20261107T150000Z
+DTEND:20261107T170000Z
+SUMMARY:Riverside Camera Club photo walk
+LOCATION:Riverside park bandstand
+DESCRIPTION:Bring any camera. Theme is bridges.
+END:VEVENT
+END:VCALENDAR
